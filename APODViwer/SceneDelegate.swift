@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		window.makeKeyAndVisible()
 		self.window = window
 		
-		coordinator.start()
+		coordinator.startCoordinator()
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {
