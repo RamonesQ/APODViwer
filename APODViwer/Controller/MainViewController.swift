@@ -8,8 +8,11 @@
 import UIKit
 import Combine
 
-class MainViewController: UIViewController, Coordinating {
-	var coordinator: Coordinator?
+class MainViewController: UIViewController//, Coordinating
+{
+	//var coordinator: Coordinator?
+	 var mainCoordinator: MainCoordinator?
+
 	var apodResponse: Apod?
 	private var subscribers = Set<AnyCancellable>()
 	var homeVM = HomeViewModel()
@@ -60,14 +63,16 @@ class MainViewController: UIViewController, Coordinating {
 	private func fetchApodByDate(){
 		let formatter = DateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd"
-		homeVM.fetchPictureBy(date: "\(formatter.string(from: datePicker.date))")
+		let formattedDate = formatter.string(from: datePicker.date)
+		homeVM.fetchPictureBy(date: formattedDate)
 	}
+
 	
 	private func setupInterface() {
 		titleLabel.text = apodResponse?.title
 		if let image = apodResponse?.url{
 			homeImage.loadFrom(URLAddress: image)}
-		wrongBt.addTarget(self, action: #selector(didTapWrongButton), for: .touchUpInside)
+		//wrongBt.addTarget(self, action: #selector(didTapWrongButton), for: .touchUpInside)
 		button.addTarget(self, action: #selector(didTapDetailsButton), for: .touchUpInside)
 	}
 	
@@ -77,9 +82,10 @@ class MainViewController: UIViewController, Coordinating {
 	}
 	
 	@objc func didTapDetailsButton(){
-		coordinator?.eventOccurred(with: .detailsButtonTapped)
+		mainCoordinator?.toDetails(with: apodResponse!.date)
+		//coordinator?.eventOccurred(with: .detailsButtonTapped)
 	}
-	@objc func didTapWrongButton(){
-		coordinator?.eventOccurred(with: .wrongButtonTapped)
-	}
+//	@objc func didTapWrongButton(){
+//		//coordinator?.eventOccurred(with: .wrongButtonTapped)
+//	}
 }
