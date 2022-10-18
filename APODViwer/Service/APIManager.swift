@@ -8,15 +8,6 @@
 import Foundation
 import Combine
 
-enum NetworkError: Error {
-	case url
-	case taskError(error: Error)
-	case noResponse
-	case noData
-	case responseStatusCode (code: Int)
-	case invalidJson
-}
-
 protocol APIManagerService {
 	 func fetchItems<T: Decodable>(url: URL, completion: @escaping (Result<T, Error>)-> Void)
 }

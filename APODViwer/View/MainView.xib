@@ -47,7 +47,7 @@
                     <buttonConfiguration key="configuration" style="plain" title="Go to Details"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1b-Z7-cGp">
-                    <rect key="frame" x="102" y="530" width="116.5" height="35"/>
+                    <rect key="frame" x="101.5" y="530" width="117" height="35"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
@@ -62,8 +62,8 @@
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="216" id="14t-5t-qEa"/>
                     </constraints>
-                    <date key="minimumDate" timeIntervalSinceReferenceDate="-175870800">
-                        <!--1995-06-06 11:00:00 +0000-->
+                    <date key="minimumDate" timeIntervalSinceReferenceDate="-175006800">
+                        <!--1995-06-16 11:00:00 +0000-->
                     </date>
                     <locale key="locale" localeIdentifier="en_US"/>
                 </datePicker>

@@ -37,6 +37,7 @@ class MainViewController: UIViewController//, Coordinating
 	override func viewDidLoad() {
         super.viewDidLoad()
 		 title = "Home"
+		datePicker.maximumDate = Date()
 		observeHomeViewModel()
 		fetchApod()
     }
