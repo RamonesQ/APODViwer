@@ -39,7 +39,7 @@ class MainViewController: UIViewController//, Coordinating
 		 title = "Home"
 		datePicker.maximumDate = Date()
 		observeHomeViewModel()
-		fetchApod()
+		//fetchApod()
     }
 	
 	private func observeHomeViewModel(){
@@ -72,8 +72,8 @@ class MainViewController: UIViewController//, Coordinating
 	private func setupInterface() {
 		titleLabel.text = apodResponse?.title
 		if let image = apodResponse?.url{
-			homeImage.loadFrom(URLAddress: image)}
-		//wrongBt.addTarget(self, action: #selector(didTapWrongButton), for: .touchUpInside)
+			homeImage.imageFromServerURL(image, placeHolder: UIImage(named: "apod_small_combined-300x180"))
+		}
 		button.addTarget(self, action: #selector(didTapDetailsButton), for: .touchUpInside)
 	}
 	
@@ -83,10 +83,9 @@ class MainViewController: UIViewController//, Coordinating
 	}
 	
 	@objc func didTapDetailsButton(){
-		mainCoordinator?.toDetails(with: apodResponse!.date)
+		if let apodRespDate = apodResponse?.date{
+			mainCoordinator?.toDetails(with: apodRespDate)
+		}
 		//coordinator?.eventOccurred(with: .detailsButtonTapped)
 	}
-//	@objc func didTapWrongButton(){
-//		//coordinator?.eventOccurred(with: .wrongButtonTapped)
-//	}
 }

@@ -63,7 +63,8 @@ class DetailsViewController: UIViewController //, Coordinating
 	private func setupInterface() {
 		titleLb.text = apodResponse?.date
 		if let im = apodResponse?.hdurl{
-			image.loadFrom(URLAddress: im)}
+			image.imageFromServerURL(im, placeHolder: UIImage(named: "apod_small_combined-300x180"))
+		}
 		dateLb.text = apodResponse?.title
 		detailsTf.text = apodResponse?.explanation
 	}
