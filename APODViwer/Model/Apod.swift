@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Welcome
 struct Apod: Codable {
 	 let date, explanation: String
-	 let hdurl: String
+	 let hdurl: String?
 	 let mediaType, title: String
 	 let url: String
 
